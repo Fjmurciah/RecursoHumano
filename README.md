@@ -5,7 +5,7 @@ A continuación encontrara los pasos para instalarlo y probarlo en su equipo, mo
 
 ## Para poder ejecutar o editar el proyecto, son necesarias las siguientes herramientas
 
-- [LARAVEL](https://getcomposer.org/download/).
+- [COMPOSER](https://getcomposer.org/download/).
 - [XAMPP](https://www.apachefriends.org/es/index.html).
 - [NODE:JS](https://nodejs.org/es/)
 - [VSCode](https://code.visualstudio.com/)
