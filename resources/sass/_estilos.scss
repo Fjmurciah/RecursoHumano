@@ -1,0 +1,21 @@
+body{
+    font-family: fantasy;
+}
+
+.bg-primary .navbar-brand{
+    color: white;
+    font-size: 2rem;
+    &:hover{
+        color: white;
+    }
+
+}
+
+
+.icono{
+    width: 20px;
+}
+
+.iconoprincipal{
+    width: 100%;
+}
