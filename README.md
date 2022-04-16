@@ -11,7 +11,7 @@ A continuación encontrará los pasos para instalarlo y probarlo en su equipo, m
 - [VSCode](https://code.visualstudio.com/)
 
 ## Instalación
-Una vez tenga los programas requeridos y clonado el repositorio en su computador, diríjase a la terminal y ejecute los siguientes comandos.
+Una vez tenga los programas requeridos y clonado el repositorio en su computador, diríjase a la terminal de visual studio code y ejecute los siguientes comandos.
 
 `composer install`
 
@@ -103,7 +103,7 @@ Una vez las dos terminales se encuentren en marcha, ve de nuevo a la terminal en
 
 ![Captura de pantalla de la terminal](/Imagenes/navegador.png)
 
-Usa en el navegador, ve a la barra de búsqueda y añade `/index`, Esto te permitirá acceder a la página principal del sistema.
+Una vez en el navegador, ve a la barra de búsqueda y añade `/index`, Esto te permitirá acceder a la página principal del sistema.
 
 ![Captura de pantalla de la terminal](/Imagenes/index.png)
 
