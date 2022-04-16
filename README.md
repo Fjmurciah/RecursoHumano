@@ -10,7 +10,7 @@ A continuación encontrara los pasos para instalarlo y probarlo en su equipo, mo
 - [NODE:JS](https://nodejs.org/es/)
 - [VSCode](https://code.visualstudio.com/)
 
-## Instalación y ejecución
+## Instalación
 Una vez tenga los programas requiridos y clonado el repositorio en su computador, dirijase a la terminal y ejecute los siguientes comandos.
 
 `composer install`
@@ -91,6 +91,8 @@ Da click en la opción de nueva y en el nombre que te pide pon `recursohumano`, 
 Vuelve a visual studio code y en la terminal escribe `php artisan migrate`, esto conectará la base de datos para su correcto uso.
 
 //// imagen ////
+
+## Ejecución
 
 Ya con todo esto configurado, escribe el comando `php artisan serve`, despues de esto crea una nueva terminal y corre el comando `npm run watch`.
 
