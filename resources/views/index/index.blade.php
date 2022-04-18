@@ -50,6 +50,19 @@
             </lord-icon>
                 Información de servicios aliados</a>
         </div>
+
+        <div class="col mx-auto bg-white p-3 mt-5">
+            <a href="{{route('infoaliado.index')}}" class="btn btn-warning  mr-2 text-white" style="border-radius: 20%">
+            <script src="https://cdn.lordicon.com/lusqsztk.js"></script>
+            <lord-icon
+                src="https://cdn.lordicon.com/tloykbxq.json"
+                trigger="hover"
+                colors="primary:#f7f7f7"
+                style="width:100%;height:100%">
+            </lord-icon>
+                Resultados encuestas</a>
+        </div>
+
     </div>
 
 

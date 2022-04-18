@@ -9,6 +9,7 @@
                         <lord-icon
                             src="https://cdn.lordicon.com/eszyyflr.json"
                             trigger="loop"
+                            delay="5000"
                             colors="primary:#000000,secondary:#794628"
                             stroke="90"
                             state="hover-wave"

@@ -11,6 +11,7 @@
                     <lord-icon
                     src="https://cdn.lordicon.com/elkhjhci.json"
                     trigger="loop"
+                    delay="5000"
                     style="width:250px;height:250px">
                     </lord-icon>
                     <h3 class="text-center">Inicio de sesión</h3>
