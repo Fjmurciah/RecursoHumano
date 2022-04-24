@@ -20,13 +20,17 @@ Una vez termine el proceso continúe con el siguiente comando.
 
 y despues el siguiente.
 
+`php artisan vendor:publish --tag=laravel-errors`
+
+`composer require maatwebsite/excel:*`
+
 `composer require psr/simple-cache:^1.0 maatwebsite/excel`
 
 `composer require phpoffice/phpspreadsheet`
 
-`composer require maatwebsite/excel:*`
-
 `php artisan vendor:publish --provider="Maatwebsite\Excel\ExcelServiceProvider" --tag=config`
+
+`php artisan migrate:fresh --seed`
 
 `npm install`
 
