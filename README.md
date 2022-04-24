@@ -4,37 +4,37 @@ El proyecto es realizado bajo el framework de trabajo LARAVEL, a continuación e
 
 ## Para poder ejecutar o editar el proyecto, son necesarias las siguientes herramientas
 
-- [COMPOSER](https://getcomposer.org/download/).
-- [XAMPP](https://www.apachefriends.org/es/index.html).
+- [XAMPP](https://www.apachefriends.org/es/index.html)
+- [COMPOSER](https://getcomposer.org/download/)
 - [NODE:JS](https://nodejs.org/es/)
 - [VSCode](https://code.visualstudio.com/)
 
 ## Instalación
-Una vez tenga los programas requeridos y clonado el repositorio en su computador, diríjase a la terminal de visual studio code y ejecute los siguientes comandos.
+Una vez tenga los programas requeridos y clonado el repositorio en su computador, abra el programa XAMMP y en el botón config haga click y en el sub menú seleccione la opciones php.ini, le abrirá un documento de texto.
+
+![imagen](/Imagenes/xammp.png)
+
+Despues de esto, presione las teclas `ctrl + b`, se abrirá una ventana de busquedad, escriba ahí lo siguiente: `extension=gd`, quite el signo ";" (punto y coma) y guarde el archivo, diríjase a la terminal de visual studio code y ejecute los siguientes comandos.
 
 `composer install`
 
 Una vez termine el proceso continúe con el siguiente comando.
 
-`composer update`
-
-y despues el siguiente.
-
-`php artisan vendor:publish --tag=laravel-errors`
-
-`composer require maatwebsite/excel:*`
-
-`composer require psr/simple-cache:^1.0 maatwebsite/excel`
-
-`composer require phpoffice/phpspreadsheet`
-
-`php artisan vendor:publish --provider="Maatwebsite\Excel\ExcelServiceProvider" --tag=config`
-
-`php artisan migrate:fresh --seed`
-
 `npm install`
 
-Una vez terminada la ejecución del comando, cambie el nombre del archivo **.env.example** por **.env**, después de esto, cambia su contenido, por el siguiente:
+Despues de esto, debe configurar su correo electronico para poder enviar correos a traves de la plataforma.
+
+- [Configuarición imap](https://mail.google.com/mail/u/0/?tab=wm#settings/fwdandpop)
+
+![imagen](/Imagenes/imap.png)
+
+- [Configuarición apps menos seguras](https://myaccount.google.com/lesssecureapps)
+
+![imagen](/Imagenes/seguras.png)
+
+Adiccional a estos pasos si le llega un correo o notificación acepte la viculación para que se puedan enviar los correos.
+
+Una vez termido esto, cambie el nombre del archivo **.env.example** por **.env**, después de esto, cambia su contenido, por el siguiente, haciendo las modificaciones al correo y la contraseña por los suyos.
 
 ```
 APP_NAME='Sistema de administración de Recurso Humano'
@@ -107,6 +107,16 @@ Vuelve a visual studio code y en la terminal escribe `php artisan migrate`, esto
 
 ![Captura de pantalla de la terminal](/Imagenes/terminal%20migrate.png)
 
+Despues de esto en la terminal de visual studio code ejecute el siguiente comando
+
+`php artisan migrate:refresh --seed`
+
+Este comando subirá el usuario administrador para poder utilizar la plataforma
+
+![Usuario por defecto](/Imagenes/usuario%20por%20defecto.png)
+
+pueden cambiarlo si así lo desea en el archivo `UsuarioSeeder.php`, el cual se encuentra en la ruta `database/seeders`.
+
 ## Ejecución
 
 Ya con todo esto configurado, escribe el comando `php artisan serve`, después de esto crea una nueva terminal y corre el comando `npm run watch`.
@@ -116,10 +126,11 @@ Ya con todo esto configurado, escribe el comando `php artisan serve`, después d
 
 Una vez las dos terminales se encuentren en marcha, ve de nuevo a la terminal en la que se está corriendo *php artisan serve* y con la tecla *ctrl* + click Seleccionas la dirección IP que te arroja la consola.
 
-![Captura de pantalla de la terminal](/Imagenes/navegador.png)
-
-Una vez en el navegador, ve a la barra de búsqueda y añade `/index`, Esto te permitirá acceder a la página principal del sistema.
-
 ![Captura de pantalla de la terminal](/Imagenes/index.png)
+
+El usuario administrador tiene como credenciales
+
+Correo: `administrador@sistema.com`
+Contraseña: `1234`
 
 #### Felicitaciones, su sistema de gestión de recurso humano está listo para ser usado en su servidor local.
