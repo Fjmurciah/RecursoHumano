@@ -62,11 +62,28 @@
                         </div>
                         <div class="row mb-0">
                             <div class="col-md-6 offset-md-3">
-                                <button type="submit" class="btn btn-primary" style="width:85%; margin-left:10%">
+                                <button type="submit" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" style="width:85%; margin-left:10%">
                                     Enviar correos
                                 </button>
                             </div>
                         </div>
+
+                        <!-- Modal -->
+                        <div class="modal fade" style="margin: 15% 0%;" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-body m-0 row justify-content-center">
+                                        <h4 class="modal-title" id="exampleModalLabel">Correo enviado</h4>
+                                        <script src="https://cdn.lordicon.com/lusqsztk.js"></script>
+                                        <lord-icon src="https://cdn.lordicon.com/crrnydsb.json" trigger="loop" delay="1000" colors="primary:#007bff" style="width:30%;height:30%">
+                                        </lord-icon>
+
+                                        <button type="button" class="btn btn-primary" style="width: 50%; margin: 5% 20%;" data-bs-dismiss="modal">Aceptar</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
                     </form>
                 </div>
             </div>
