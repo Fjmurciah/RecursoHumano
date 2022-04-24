@@ -14,7 +14,11 @@ Una vez tenga los programas requeridos y clonado el repositorio en su computador
 
 ![imagen](/Imagenes/xammp.png)
 
-Despues de esto, presione las teclas `ctrl + b`, se abrirá una ventana de busquedad, escriba ahí lo siguiente: `extension=gd`, quite el signo ";" (punto y coma) que antece el comando y guarde el archivo, diríjase a la terminal de visual studio code y ejecute los siguientes comandos.
+Despues de esto, presione las teclas `ctrl + b`, se abrirá una ventana de busquedad, escriba ahí lo siguiente: `extension=gd`, quite el signo ";" (punto y coma) que antece el comando y guarde el archivo.
+
+![imagen](/Imagenes/gd.png)
+
+diríjase a la terminal de visual studio code y ejecute los siguientes comandos.
 
 `composer install`
 
