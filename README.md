@@ -16,14 +16,26 @@ Una vez tenga los programas requeridos y clonado el repositorio en su computador
 
 Una vez termine el proceso continúe con el siguiente comando.
 
+`composer update`
+
+y despues el siguiente.
+
+`composer require psr/simple-cache:^1.0 maatwebsite/excel`
+
+`composer require phpoffice/phpspreadsheet`
+
+`composer require maatwebsite/excel:*`
+
+`php artisan vendor:publish --provider="Maatwebsite\Excel\ExcelServiceProvider" --tag=config`
+
 `npm install`
 
 Una vez terminada la ejecución del comando, cambie el nombre del archivo **.env.example** por **.env**, después de esto, cambia su contenido, por el siguiente:
 
 ```
-APP_NAME='Sistema de administración de recurso humano'
+APP_NAME='Sistema de administración de Recurso Humano'
 APP_ENV=local
-APP_KEY=base64:Z82yfj7pEOLYiSR44NOiX/UeXANLppaodL+ydOx/ffc=
+APP_KEY=base64:+LHjTfwLDj/sDtJBNHBD1BdnjJ2EujwuW9/OrR7lU74=
 APP_DEBUG=true
 APP_URL=http://localhost
 
@@ -52,12 +64,12 @@ REDIS_PASSWORD=null
 REDIS_PORT=6379
 
 MAIL_MAILER=smtp
-MAIL_HOST=mailhog
-MAIL_PORT=1025
-MAIL_USERNAME=null
-MAIL_PASSWORD=null
-MAIL_ENCRYPTION=null
-MAIL_FROM_ADDRESS="hello@example.com"
+MAIL_HOST=smtp.gmail.com
+MAIL_PORT=465
+MAIL_USERNAME=ferjomuhi
+MAIL_PASSWORD=FERnando0214
+MAIL_ENCRYPTION=ssl
+MAIL_FROM_ADDRESS=ferjomuhi@gmail.com
 MAIL_FROM_NAME="${APP_NAME}"
 
 AWS_ACCESS_KEY_ID=
