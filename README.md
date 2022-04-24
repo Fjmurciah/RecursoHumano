@@ -1,7 +1,6 @@
 # Sistema de Gestión de Recursos Humanos
-Proyecto de programación realizado como requisito para la aprobación de la asignatura INGENIERÍA DE SOFTWARE 3, El proyecto es realizado bajo el framework de trabajo LARAVEL.
 
-A continuación encontrará los pasos para instalarlo y probarlo en su equipo, modificarlo y actualizarlo, el programa fue desarrollado en computadoras con **windows** en sus versiones 10 y 11, por lo que se recomienda el uso de este sistema operativo.
+El proyecto es realizado bajo el framework de trabajo LARAVEL, a continuación encontrará los pasos para instalarlo y probarlo en su equipo, modificarlo y actualizarlo, el programa fue desarrollado y probado en computadoras con **windows** en sus versiones 8.1, 10 y 11, por lo que se recomienda el uso de este sistema operativo.
 
 ## Para poder ejecutar o editar el proyecto, son necesarias las siguientes herramientas
 

@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('botones')
 
-<a href="{{route('informacionacademica.index')}}" class="btn btn-primary mr-2 text-white">
+<a href="{{route('encuesta.index')}}" class="btn btn-primary mr-2 text-white">
     <svg class="icono" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
         <path stroke-linecap="round" stroke-linejoin="round" d="M11 15l-3-3m0 0l3-3m-3 3h8M3 12a9 9 0 1118 0 9 9 0 01-18 0z" />
     </svg>
@@ -18,16 +18,36 @@
                 </lord-icon>
 
                 <div class="card-body">
-                    <form method="POST" action="{{ route('informacionmedica.update', ['medica'=> $medica->id]) }}" enctype="multipart/form-data" novalidate>
+                    <form method="POST" action="{{ route('encuesta.update', ['encuest'=> $encuesta->id]) }}" enctype="multipart/form-data" novalidate>
                         @csrf
                         @method('PUT')
                         <div class="row mb-3">
                             <label for="name" class="col-md-4 col-form-label text-md-end">{{ __('Name') }}</label>
 
                             <div class="col-md">
-                                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ $medica->name }}" required autocomplete="name" autofocus>
+                                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ $encuesta->name }}" required autocomplete="name" autofocus>
 
                                 @error('name')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                                @enderror
+                            </div>
+                        </div>
+
+
+                        <div class="row mb-3">
+                            <label for="name" class="col-md-4 col-form-label text-md-end">Tipo de encuesta</label>
+
+                            <div class="col-md-6">
+
+                                <select name="tipo" id="rol" class="form-control @error('tipo') is-invalid @enderror" name="tipo" value="{{ old('tipo') }}" required autocomplete="tipo" autofocus>
+                                    <option value="">Seleccione</option>
+                                    <option value="Ambiente laboral" {{ $encuesta->tipo == "Ambiente laboral" ? 'selected' : ''}}>Ambiente laboral</option>
+                                    <option value="Depresión y trastornos mentales" {{ $encuesta->tipo == "Depresión y trastornos mentales" ? 'selected' : ''}}>Depresión y trastornos mentales</option>
+                                </select>
+
+                                @error('tipo')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
                                 </span>
@@ -41,7 +61,7 @@
                             <label for="url" class="col-md-4 col-form-label text-md-end">Agregue el documento</label>
 
                             <div class="col-md">
-                                <input id="url" type="file" class="form-control @error('url') is-invalid @enderror" name="url" value="{{ $medica->url }}" required autocomplete="url" autofocus>
+                                <input id="url" type="file" class="form-control @error('url') is-invalid @enderror" name="url" value="{{ $encuesta->url }}" required autocomplete="url" autofocus>
 
 
                                 @error('url')
@@ -54,14 +74,14 @@
                         <div class="row mb-3">
                             <label for="url" class="col-md-4 col-form-label text-md-end"></label>
                             <div class="col-md-6">
-                                <a class="form-control" href="/storage/{{$medica->url}}">Información medica</a>
+                                <a class="form-control" href="/storage/{{$encuesta->url}}">Información encuesta</a>
                             </div>
                         </div>
 
                         <div class="row mb-0">
                             <div class="col-md-6 offset-md-2">
                                 <button type="submit" class="btn btn-primary" style="width:100%; margin-left:20%">
-                                    {{ __('Register') }}
+                                    Guardar
                                 </button>
                             </div>
                         </div>

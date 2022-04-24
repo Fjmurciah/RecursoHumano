@@ -13,9 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
  */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'indexController@index')->name('indexController.index');
 
 Auth::routes();
 
@@ -58,3 +56,16 @@ Route::get('/informacion-aliado/{id}/edit', 'ServiciosAliadoController@edit')->n
 Route::put('/informacion-aliado/{infoaliado}', 'ServiciosAliadoController@update')->name('infoaliado.update');
 Route::delete('/informacion-aliado/{infoaliado}', 'ServiciosAliadoController@destroy')->name('infoaliado.destroy');
 Route::get('/informacion-aliado/{id}', 'ServiciosAliadoController@show')->name('infoaliado.show');
+
+//Vita envia Correo
+Route::get('/envia-correo', 'CorreoControllerController@index')->name('correo.index');
+Route::post('/envia-correo/store', 'CorreoControllerController@store')->name('correo.store');
+
+//Encuestas
+Route::get('/encuesta', 'ResultadoControllerController@index')->name('encuesta.index');
+Route::get('/encuesta/create', 'ResultadoControllerController@create')->name('encuesta.create');
+Route::post('/encuesta/store', 'ResultadoControllerController@store')->name('encuesta.store');
+Route::get('/encuesta/{id}/edit', 'ResultadoControllerController@edit')->name('encuesta.edit');
+Route::put('/encuesta/{encuest}', 'ResultadoControllerController@update')->name('encuesta.update');
+Route::delete('/encuesta/{encuest}', 'ResultadoControllerController@destroy')->name('encuesta.destroy');
+Route::get('/encuesta/{id}', 'ResultadoControllerController@show')->name('encuesta.show');

@@ -24,6 +24,7 @@ Vue.component('eliminar-hoja', require('./components/EliminaHoja.vue').default);
 Vue.component('eliminar-academica', require('./components/EliminarAcademica.vue').default);
 Vue.component('eliminar-medica', require('./components/EliminarMedica.vue').default);
 Vue.component('eliminar-aliado', require('./components/EliminarAliado.vue').default);
+Vue.component('eliminar-encuesta', require('./components/EliminarEncuesta.vue').default);
 
 
 
