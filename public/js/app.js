@@ -5454,8 +5454,8 @@ __webpack_require__.r(__webpack_exports__);
       var _this = this;
 
       this.$swal({
-        title: 'Deseas eliminar esta hoja de vida?',
-        text: "Si eliminas este hoja de vida no se podra recuperar!",
+        title: 'Deseas eliminar esta información academica?',
+        text: "Si se elimina, no se podra recuperar!",
         icon: 'warning',
         showCancelButton: true,
         confirmButtonColor: '#3085d6',
@@ -5655,8 +5655,8 @@ __webpack_require__.r(__webpack_exports__);
       var _this = this;
 
       this.$swal({
-        title: 'Deseas eliminar esta hoja de vida?',
-        text: "Si eliminas este hoja de vida no se podra recuperar!",
+        title: 'Deseas eliminar esta información medica?',
+        text: "Si se elimina, no se podra recuperar!",
         icon: 'warning',
         showCancelButton: true,
         confirmButtonColor: '#3085d6',
@@ -5669,7 +5669,7 @@ __webpack_require__.r(__webpack_exports__);
             id: _this.hojaId
           }; //enviar peticion al servidor
 
-          axios.post("/informacion-academica/".concat(_this.hojaId), {
+          axios.post("/informacion-medica/".concat(_this.hojaId), {
             params: params,
             _method: 'delete'
           }).then(function (respuesta) {
@@ -5680,8 +5680,8 @@ __webpack_require__.r(__webpack_exports__);
           });
 
           _this.$swal({
-            title: 'Informacion académica eliminada',
-            text: 'Se elimino la informacion académica',
+            title: 'Informacion medica eliminada',
+            text: 'Se elimino la informacion medica',
             icon: 'success'
           });
         }

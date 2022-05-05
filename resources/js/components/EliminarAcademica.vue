@@ -17,8 +17,8 @@ export default {
     methods:{
         elliminarHoja(){
 this.$swal({
-  title: 'Deseas eliminar esta hoja de vida?',
-  text: "Si eliminas este hoja de vida no se podra recuperar!",
+  title: 'Deseas eliminar esta información academica?',
+  text: "Si se elimina, no se podra recuperar!",
   icon: 'warning',
   showCancelButton: true,
   confirmButtonColor: '#3085d6',

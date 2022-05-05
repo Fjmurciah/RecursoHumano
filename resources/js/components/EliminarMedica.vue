@@ -17,8 +17,8 @@ export default {
     methods:{
         elliminarHoja(){
 this.$swal({
-  title: 'Deseas eliminar esta hoja de vida?',
-  text: "Si eliminas este hoja de vida no se podra recuperar!",
+  title: 'Deseas eliminar esta información medica?',
+  text: "Si se elimina, no se podra recuperar!",
   icon: 'warning',
   showCancelButton: true,
   confirmButtonColor: '#3085d6',
@@ -31,7 +31,7 @@ this.$swal({
           id: this.hojaId
       }
       //enviar peticion al servidor
-    axios.post(`/informacion-academica/${this.hojaId}`, {params, _method: 'delete'})
+    axios.post(`/informacion-medica/${this.hojaId}`, {params, _method: 'delete'})
         .then(respuesta=>{
 
             //ELIMINAR DEL DOM
@@ -43,8 +43,8 @@ this.$swal({
         })
 
     this.$swal({
-        title: 'Informacion académica eliminada',
-        text:'Se elimino la informacion académica',
+        title: 'Informacion medica eliminada',
+        text:'Se elimino la informacion medica',
         icon:'success'
     })
   }
