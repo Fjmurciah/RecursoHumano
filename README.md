@@ -115,6 +115,10 @@ Despues de esto en la terminal de visual studio code ejecute el siguiente comand
 
 `php artisan migrate:refresh --seed`
 
+y
+
+`php artisan storage:link`
+
 Este comando subirá el usuario administrador para poder utilizar la plataforma
 
 ![Usuario por defecto](/Imagenes/usuario%20por%20defecto.png)
