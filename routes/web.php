@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -69,3 +70,8 @@ Route::get('/encuesta/{id}/edit', 'ResultadoControllerController@edit')->name('e
 Route::put('/encuesta/{encuest}', 'ResultadoControllerController@update')->name('encuesta.update');
 Route::delete('/encuesta/{encuest}', 'ResultadoControllerController@destroy')->name('encuesta.destroy');
 Route::get('/encuesta/{id}', 'ResultadoControllerController@show')->name('encuesta.show');
+
+
+Route::get('/enlaces', function(){
+  Artisan::call('storage:link');
+});

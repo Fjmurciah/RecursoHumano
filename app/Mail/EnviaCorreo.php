@@ -29,6 +29,6 @@ class EnviaCorreo extends Mailable
      */
     public function build()
     {
-        return $this->subject('Correo de Gestión talento')->view('emails.correo');
+        return $this->view('emails.correo');
     }
 }
