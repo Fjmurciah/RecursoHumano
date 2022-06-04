@@ -55,7 +55,7 @@
 
                             <div class="col-md-7">
 
-                                <select name="rol" id="rol" class="form-control @error('rol') is-invalid @enderror" name="rol" value="{{ old('rol') }}" required autocomplete="rol" autofocus>
+                                <select name="rol" id="rol" class="form-select @error('rol') is-invalid @enderror" name="rol" value="{{ old('rol') }}" required autocomplete="rol">
                                     <option value="">Seleccione</option>
                                     <option value="Director" {{ old('rol') == "Director" ? 'selected' : ''}}>Director</option>
                                     <option value="Líder" {{ old('rol') == "Líder" ? 'selected' : ''}}>Líder</option>

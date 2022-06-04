@@ -5,9 +5,12 @@ namespace Tests\Unit;
 use Tests\TestCase;
 use App\Models\Encuesta;
 use App\Models\ResultadoController;
+use Illuminate\Foundation\Testing\RefreshDatabase;
 
 class EncuestaTest extends TestCase
 {
+    //Para que no se guarden los datos que se insertan en la base de datos
+    use RefreshDatabase;
     /**
      * A basic unit test example.
      *
