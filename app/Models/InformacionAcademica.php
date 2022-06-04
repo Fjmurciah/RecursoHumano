@@ -19,4 +19,8 @@ class InformacionAcademica extends Model
         'url',
     ];
 
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }
