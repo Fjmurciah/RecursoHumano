@@ -2,13 +2,14 @@
 
 namespace Tests\Browser;
 
+use App\Models\InformacionAcademica;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Laravel\Dusk\Browser;
 use Tests\DuskTestCase;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
 
-class HojasDeVidaTest extends DuskTestCase
+class InformacionAcademicaTest extends DuskTestCase
 {
     //Para que se hagan las migraciones, luego el test, y finalmente se eliminen las migraciones (tablas)
     use DatabaseMigrations;
@@ -18,7 +19,7 @@ class HojasDeVidaTest extends DuskTestCase
      *
      * @return void
      */
-    public function test_create_hojas_de_vida()
+    public function test_create_informacion_academica()
     {
         User::create([
             'name' => 'Administrador del sistema',
@@ -32,58 +33,18 @@ class HojasDeVidaTest extends DuskTestCase
         $this->browse(function (Browser $browser) {
             $browser->loginAs(User::find(1));                   //Hace el login
             $browser->visit('/index');
-            $browser->clickLink('Hojas de vida');
-            $browser->visit('/hojas-de-vida');
-            $browser->clickLink('Crear hoja de vida');
-            $browser->visit('/hojas-de-vida/create');
-            $browser->type('name', 'Pepito Perez');
-
-            $browser->select('rol');
+            $browser->clickLink('Información académica');
+            $browser->visit('/informacion-academica');
+            $browser->clickLink('Crear información académica');
+            $browser->visit('/informacion-academica/create');
+            $browser->type('name', 'Infoacademica');
             $browser->attach('url', 'C:\Users\Ferjo\Downloads\hojadevida.pdf');
-            $browser->select('estado');
-            $browser->type('email', 'pepitoperez@gmail.com');
-            $browser->type('password', '1234');
-            $browser->type('password_confirmation', '1234');
-            $browser->press('Registrarse');
-            $browser->assertPathIs('/hojas-de-vida')->assertSee('Pepito Perez');
-        });
-    }
-
-    public function test_update_hojas_de_vida()
-    {
-        User::create([
-            'name' => 'Administrador del sistema',
-            'email' => 'administrador@sistema.com',
-            'rol' => 'Administrador',
-            'estado' => 'Activo',
-            'url' => '',
-            'password' => Hash::make('1234'),
-        ]);
-
-        User::create([
-            'name' => 'Pepito Perez',
-            'email' => 'pepitoperez@sistema.com',
-            'rol' => 'Desarrollador',
-            'estado' => 'Activo',
-            'url' => '',
-            'password' => Hash::make('1234'),
-        ]);
-
-        $this->browse(function (Browser $browser) {
-            $browser->loginAs(User::find(1));                   //Hace el login
-            $browser->visit('/index');
-            $browser->clickLink('Hojas de vida');
-            $browser->visit('/hojas-de-vida');
-            $browser->clickLink('Editar');
-            $browser->visit('/hojas-de-vida/2/edit');
-            $browser->type('name', 'Pepito Pérez Martínez');
             $browser->press('Registro');
-
-            $browser->assertPathIs('/hojas-de-vida');
+            $browser->assertPathIs('/informacion-academica')->assertSee('Infoacademica');
         });
     }
 
-    public function test_delete_hojas_de_vida()
+    public function test_update_informacion_academica()
     {
         User::create([
             'name' => 'Administrador del sistema',
@@ -94,22 +55,50 @@ class HojasDeVidaTest extends DuskTestCase
             'password' => Hash::make('1234'),
         ]);
 
-        User::create([
-            'name' => 'Pepito Perez',
-            'email' => 'pepitoperez@sistema.com',
-            'rol' => 'Desarrollador',
-            'estado' => 'Activo',
-            'url' => '',
-            'password' => Hash::make('1234'),
+        InformacionAcademica::create([
+            'name' => 'Infoacademica',
+            'url' => 'url', 'C:\Users\Ferjo\Downloads\hojadevida.pdf',
         ]);
 
         $this->browse(function (Browser $browser) {
             $browser->loginAs(User::find(1));                   //Hace el login
             $browser->visit('/index');
-            $browser->clickLink('Hojas de vida');
-            $browser->visit('/hojas-de-vida');
-            $browser->press('Eliminar X');
-            $browser->assertPathIs('/hojas-de-vida');
+            $browser->clickLink('Información académica');
+            $browser->visit('/informacion-academica');
+            $browser->clickLink('Editar');
+            $browser->visit('/informacion-academica/1/edit');
+            $browser->type('name', 'Infoacademica pepitoperez');
+            $browser->press('Actualizar');
+            $browser->assertPathIs('/informacion-academica');
         });
+
     }
+
+    public function test_delete_informacion_academica()
+    {
+        User::create([
+            'name' => 'Administrador del sistema',
+            'email' => 'administrador@sistema.com',
+            'rol' => 'Administrador',
+            'estado' => 'Activo',
+            'url' => '',
+            'password' => Hash::make('1234'),
+        ]);
+
+        InformacionAcademica::create([
+            'name' => 'Infoacademica',
+            'url' => 'url', 'C:\Users\Ferjo\Downloads\hojadevida.pdf',
+        ]);
+
+        $this->browse(function (Browser $browser) {
+            $browser->loginAs(User::find(1));                   //Hace el login
+            $browser->visit('/index');
+            $browser->clickLink('Información académica');
+            $browser->visit('/informacion-academica');
+            $browser->press('Eliminar X');
+            $browser->assertPathIs('/informacion-academica');
+        });
+
+    }
+
 }
