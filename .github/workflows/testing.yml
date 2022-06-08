@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - master
+jobs:
 
   dusk-php:
     runs-on: ubuntu-latest
