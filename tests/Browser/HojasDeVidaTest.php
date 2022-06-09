@@ -30,19 +30,22 @@ class HojasDeVidaTest extends DuskTestCase
         ]);
 
         $this->browse(function (Browser $browser) {
-            $browser->loginAs(User::find(1))                  //Hace el login
-            ->visit('/index')->clickLink('Hojas de vida')
-            ->visit('/hojas-de-vida')->clickLink('Crear hoja de vida')
-            ->visit('/hojas-de-vida/create')->type('name', 'Pepito Perez')
+            $browser->loginAs(User::find(1));                   //Hace el login
+            $browser->visit('/index');
+            $browser->clickLink('Hojas de vida');
+            $browser->visit('/hojas-de-vida');
+            $browser->clickLink('Crear hoja de vida');
+            $browser->visit('/hojas-de-vida/create');
+            $browser->type('name', 'Pepito Perez');
 
-            ->select('rol')
-            ->attach('url', 'C:\Users\Ferjo\Downloads\hojadevida.pdf')
-            ->select('estado')
-            ->type('email', 'pepitoperez@gmail.com')
-            ->type('password', '1234')
-            ->type('password_confirmation', '1234')
-            ->press('Registrarse')
-            ->assertPathIs('/hojas-de-vida')->assertSee('Pepito Perez');
+            $browser->select('rol');
+            $browser->attach('url', 'C:\Users\Ferjo\Downloads\hojadevida.pdf');
+            $browser->select('estado');
+            $browser->type('email', 'pepitoperez@gmail.com');
+            $browser->type('password', '1234');
+            $browser->type('password_confirmation', '1234');
+            $browser->press('Registrarse');
+            $browser->assertPathIs('/hojas-de-vida')->assertSee('Pepito Perez');
         });
     }
 
