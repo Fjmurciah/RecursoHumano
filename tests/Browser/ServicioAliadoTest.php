@@ -31,6 +31,10 @@ class ServicioAliadoTest extends DuskTestCase
 
         $this->browse(function (Browser $browser) {
             $browser->loginAs(User::find(1))                   //Hace el login
+            ->visit('/index')
+            ->clickLink('Información de servicios aliados')
+            ->visit('/informacion-aliado')
+            ->clickLink('Crear información aliados')
             ->visit('/informacion-aliado/create')
             ->type('name', 'Empresa')
             ->type('nit', '1234')
@@ -59,6 +63,10 @@ class ServicioAliadoTest extends DuskTestCase
 
         $this->browse(function (Browser $browser) {
             $browser->loginAs(User::find(1))                   //Hace el login
+            ->visit('/index')
+            ->clickLink('Información de servicios aliados')
+            ->visit('/informacion-aliado')
+            ->clickLink('Editar')
             ->visit('/informacion-aliado/1/edit')
             ->type('name', 'Empresa SAS')
             ->press('Registro')
@@ -88,7 +96,7 @@ class ServicioAliadoTest extends DuskTestCase
             ->visit('/index')
             ->clickLink('Información de servicios aliados')
             ->visit('/informacion-aliado')
-            ->type('submit', 'Eliminar X')
+            ->press('Eliminar X')
             ->assertPathIs('/informacion-aliado');
         });
     }
