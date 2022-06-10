@@ -27,6 +27,7 @@
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/index') }}">
                     {{ config('app.name', 'Laravel') }}
+                    Hola!!
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"

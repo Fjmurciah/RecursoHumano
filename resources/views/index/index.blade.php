@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
 
-<h1 class="text-center" style="margin-top: -5%;">¿Que desea hacer?</h1>
+<h1 class="text-center" style="margin-top: -5%;">¿Que desea hacer? juemadre vida</h1>
 <div class="row" style="margin: -4% 18%;">
     <div class="col mx-auto bg-white p-3 mt-5">
         <a href="{{route('hojasdevida.index')}}" class="btn btn-secondary mr-2 text-white" style="border-radius: 20%">
