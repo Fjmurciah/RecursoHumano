@@ -95,7 +95,7 @@ class InformacionAcademicaTest extends DuskTestCase
             ->visit('/index')
             ->clickLink('Información académica')
             ->visit('/informacion-academica')
-            ->press('Eliminar X')
+            ->findByNameOrId('Eliminar X')->click()
             ->assertPathIs('/informacion-academica');
         });
 
