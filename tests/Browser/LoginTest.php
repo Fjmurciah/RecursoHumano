@@ -29,13 +29,13 @@ class LoginTest extends DuskTestCase
         ]);
 
         $this->browse(function (Browser $browser) {
-            $browser->visit('/index');
-            $browser->press('Acceder');
-            $browser->visit('/login');
-            $browser->type('email', 'administrador@sistema.com');
-            $browser->type('password', '1234');
-            $browser->press('Acceder');
-            $browser->assertPathIs('/index')->assertSee('Administrador del sistema');
+            $browser->visit('/index')
+            ->clickLink('Acceder')
+            ->visit('/login')
+            ->type('email', 'administrador@sistema.com')
+            ->type('password', '1234')
+            ->press('Acceder')
+            ->assertPathIs('/index')->assertSee('Administrador del sistema');
         });
     }
 }
