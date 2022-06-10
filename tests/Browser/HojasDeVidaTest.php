@@ -30,8 +30,12 @@ class HojasDeVidaTest extends DuskTestCase
         ]);
 
         $this->browse(function (Browser $browser) {
-            $browser->loginAs(User::find(1))                   //Hace el login
-            ->visit('/index/hojas-de-vida/create')
+            $browser->loginAs(User::find(1));                   //Hace el login
+            $browser->visit('/index');
+            $browser->clickLink('Hojas de vida');
+            $browser->visit('/hojas-de-vida');
+            $browser->clickLink('Crear hoja de vida');
+            $browser->visit('/hojas-de-vida/create')
             ->type('name', 'Pepito Perez')
 
             ->select('rol')
@@ -66,8 +70,12 @@ class HojasDeVidaTest extends DuskTestCase
         ]);
 
         $this->browse(function (Browser $browser) {
-            $browser->loginAs(User::find(1))                   //Hace el login
-            ->visit('/index/hojas-de-vida/2/edit')
+            $browser->loginAs(User::find(1));                   //Hace el login
+            $browser->visit('/index');
+            $browser->clickLink('Hojas de vida');
+            $browser->visit('/hojas-de-vida')
+            ->clickLink('Editar')
+            ->visit('/hojas-de-vida/2/edit')
             ->type('name', 'Pepito Pérez Martínez')
             ->press('Registro')
             ->assertPathIs('/hojas-de-vida');
