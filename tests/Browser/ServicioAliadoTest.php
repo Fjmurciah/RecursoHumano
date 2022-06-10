@@ -34,7 +34,7 @@ class ServicioAliadoTest extends DuskTestCase
             ->visit('/index')
             ->clickLink('Información de servicios aliados')
             ->visit('/informacion-aliado')
-            ->clickLink('Crear información aliados')
+            ->clickLink(' Crear información aliados')
             ->visit('/informacion-aliado/create')
             ->type('name', 'Empresa')
             ->type('nit', '1234')
@@ -66,7 +66,7 @@ class ServicioAliadoTest extends DuskTestCase
             ->visit('/index')
             ->clickLink('Información de servicios aliados')
             ->visit('/informacion-aliado')
-            ->clickLink('Editar')
+            ->clickLink(' Editar')
             ->visit('/informacion-aliado/1/edit')
             ->type('name', 'Empresa SAS')
             ->press('Registro')
@@ -96,7 +96,7 @@ class ServicioAliadoTest extends DuskTestCase
             ->visit('/index')
             ->clickLink('Información de servicios aliados')
             ->visit('/informacion-aliado')
-            ->press('Eliminar X')
+            ->type('submit', 'Eliminar X')
             ->assertPathIs('/informacion-aliado');
         });
     }

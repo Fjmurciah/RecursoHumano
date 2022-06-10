@@ -31,16 +31,16 @@ class InformacionMedicaTest extends DuskTestCase
         ]);
 
         $this->browse(function (Browser $browser) {
-            $browser->loginAs(User::find(1));                   //Hace el login
-            $browser->visit('/index')
-            ->clickLink('Información médica');
-            $browser->visit('/informacion-medica')
-            ->clickLink('Crear información medica');
-            $browser->visit('/informacion-medica/create');
-            $browser->type('name', 'infoMedica');
-            $browser->attach('url', 'C:\Users\Ferjo\Downloads\hojadevida.pdf');
-            $browser->press('Registro');
-            $browser->assertPathIs('/informacion-medica')->assertSee('infoMedica');
+            $browser->loginAs(User::find(1))                   //Hace el login
+            ->visit('/index')
+            ->clickLink('Información médica')
+            ->visit('/informacion-medica')
+            ->clickLink(' Crear información medica')
+            ->visit('/informacion-medica/create')
+            ->type('name', 'infoMedica')
+            ->attach('url', 'C:\Users\Ferjo\Downloads\hojadevida.pdf')
+            ->press('Registro')
+            ->assertPathIs('/informacion-medica')->assertSee('infoMedica');
         });
     }
 
@@ -65,7 +65,7 @@ class InformacionMedicaTest extends DuskTestCase
             ->visit('/index')
             ->clickLink('Información médica')
             ->visit('/informacion-medica')
-            ->clickLink('Editar')
+            ->clickLink(' Editar')
             ->visit('/informacion-medica/1/edit')
             ->type('name', 'infoMedica pacho')
             ->press('Registro')
@@ -95,7 +95,7 @@ class InformacionMedicaTest extends DuskTestCase
             ->visit('/index')
             ->clickLink('Información médica')
             ->visit('/informacion-medica')
-            ->press('Eliminar X')
+            ->type('submit', 'Eliminar X')
             ->assertPathIs('/informacion-medica');
         });
 
