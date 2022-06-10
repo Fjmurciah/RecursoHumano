@@ -32,9 +32,9 @@ class ServicioAliadoTest extends DuskTestCase
         $this->browse(function (Browser $browser) {
             $browser->loginAs(User::find(1));                   //Hace el login
             $browser->visit('/index');
-            $browser->clickLink('Información de servicios aliados');
+            $browser->press('Información de servicios aliados');
             $browser->visit('/informacion-aliado');
-            $browser->clickLink('Crear información aliados');
+            $browser->press('Crear información aliados');
             $browser->visit('/informacion-aliado/create');
             $browser->type('name', 'Empresa');
             $browser->type('nit', '1234');
@@ -64,9 +64,9 @@ class ServicioAliadoTest extends DuskTestCase
         $this->browse(function (Browser $browser) {
             $browser->loginAs(User::find(1));                   //Hace el login
             $browser->visit('/index');
-            $browser->clickLink('Información de servicios aliados');
+            $browser->press('Información de servicios aliados');
             $browser->visit('/informacion-aliado');
-            $browser->clickLink('Editar');
+            $browser->press('Editar');
             $browser->visit('/informacion-aliado/1/edit');
             $browser->type('name', 'Empresa SAS');
             $browser->press('Registro');
@@ -94,7 +94,7 @@ class ServicioAliadoTest extends DuskTestCase
         $this->browse(function (Browser $browser) {
             $browser->loginAs(User::find(1));                   //Hace el login
             $browser->visit('/index');
-            $browser->clickLink('Información de servicios aliados');
+            $browser->press('Información de servicios aliados');
             $browser->visit('/informacion-aliado');
             $browser->visit('/informacion-aliado');
             $browser->press('Eliminar X');

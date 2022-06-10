@@ -33,9 +33,9 @@ class InformacionAcademicaTest extends DuskTestCase
         $this->browse(function (Browser $browser) {
             $browser->loginAs(User::find(1));                   //Hace el login
             $browser->visit('/index');
-            $browser->clickLink('Información académica');
+            $browser->press('Información académica');
             $browser->visit('/informacion-academica');
-            $browser->clickLink('Crear información académica');
+            $browser->press('Crear información académica');
             $browser->visit('/informacion-academica/create');
             $browser->type('name', 'Infoacademica');
             $browser->attach('url', 'C:\Users\Ferjo\Downloads\hojadevida.pdf');
@@ -63,9 +63,9 @@ class InformacionAcademicaTest extends DuskTestCase
         $this->browse(function (Browser $browser) {
             $browser->loginAs(User::find(1));                   //Hace el login
             $browser->visit('/index');
-            $browser->clickLink('Información académica');
+            $browser->press('Información académica');
             $browser->visit('/informacion-academica');
-            $browser->clickLink('Editar');
+            $browser->press('Editar');
             $browser->visit('/informacion-academica/1/edit');
             $browser->type('name', 'Infoacademica pepitoperez');
             $browser->press('Actualizar');
@@ -93,7 +93,7 @@ class InformacionAcademicaTest extends DuskTestCase
         $this->browse(function (Browser $browser) {
             $browser->loginAs(User::find(1));                   //Hace el login
             $browser->visit('/index');
-            $browser->clickLink('Información académica');
+            $browser->press('Información académica');
             $browser->visit('/informacion-academica');
             $browser->press('Eliminar X');
             $browser->assertPathIs('/informacion-academica');

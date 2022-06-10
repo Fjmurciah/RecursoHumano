@@ -30,7 +30,7 @@ class LoginTest extends DuskTestCase
 
         $this->browse(function (Browser $browser) {
             $browser->visit('/index');
-            $browser->clickLink('Acceder');
+            $browser->press('Acceder');
             $browser->visit('/login');
             $browser->type('email', 'administrador@sistema.com');
             $browser->type('password', '1234');
