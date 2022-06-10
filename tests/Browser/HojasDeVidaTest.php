@@ -32,9 +32,9 @@ class HojasDeVidaTest extends DuskTestCase
         $this->browse(function (Browser $browser) {
             $browser->loginAs(User::find(1))                   //Hace el login
             ->visit('/index')
-            ->clickLink('Hojas de vida')
+            ->click('Hojas de vida')
             ->visit('/hojas-de-vida')
-            ->clickLink('Crear hoja de vida')
+            ->click('Crear hoja de vida')
             ->visit('/hojas-de-vida/create')
             ->type('name', 'Pepito Perez')
 
@@ -72,9 +72,9 @@ class HojasDeVidaTest extends DuskTestCase
         $this->browse(function (Browser $browser) {
             $browser->loginAs(User::find(1))                   //Hace el login
             ->visit('/index')
-            ->clickLink('Hojas de vida')
+            ->click('Hojas de vida')
             ->visit('/hojas-de-vida')
-            ->clickLink('Editar')
+            ->click('Editar')
             ->visit('/hojas-de-vida/2/edit')
             ->type('name', 'Pepito Pérez Martínez')
             ->press('Registro')
