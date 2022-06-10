@@ -95,7 +95,7 @@ class InformacionMedicaTest extends DuskTestCase
             ->visit('/index')
             ->clickLink('Información médica')
             ->visit('/informacion-medica')
-            ->findByNameOrId('Eliminar X')->click()
+            ->press('Eliminar X')->click()
             ->assertPathIs('/informacion-medica');
         });
 

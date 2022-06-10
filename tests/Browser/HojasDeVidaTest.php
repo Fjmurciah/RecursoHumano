@@ -107,7 +107,7 @@ class HojasDeVidaTest extends DuskTestCase
             ->visit('/index')
             ->clickLink('Hojas de vida')
             ->visit('/hojas-de-vida')
-            ->findByNameOrId('Eliminar X')->click()
+            ->press('Eliminar X')->click()
             ->assertPathIs('/hojas-de-vida');
         });
     }

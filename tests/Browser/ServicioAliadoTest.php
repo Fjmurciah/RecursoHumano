@@ -96,7 +96,7 @@ class ServicioAliadoTest extends DuskTestCase
             ->visit('/index')
             ->clickLink('Información de servicios aliados')
             ->visit('/informacion-aliado')
-            ->findByNameOrId('Eliminar X')->click()
+            ->press('Eliminar X')->click()
             ->assertPathIs('/informacion-aliado');
         });
     }

@@ -45,7 +45,7 @@
                         </svg>
                         Editar</a>
 
-                    <eliminar-academica hoja-id={{$informacion->id}}></eliminar-academica>
+                    <eliminar-academica id="Eliminar X" hoja-id={{$informacion->id}}></eliminar-academica>
                 </th>
             </tr>
             @endforeach
