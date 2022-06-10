@@ -32,10 +32,6 @@ class InformacionMedicaTest extends DuskTestCase
 
         $this->browse(function (Browser $browser) {
             $browser->loginAs(User::find(1))                   //Hace el login
-            ->visit('/index')
-            ->clickLink('Información médica')
-            ->visit('/informacion-medica')
-            ->clickLink(' Crear información medica')
             ->visit('/informacion-medica/create')
             ->type('name', 'infoMedica')
             ->attach('url', 'C:\Users\Ferjo\Downloads\hojadevida.pdf')
@@ -62,10 +58,6 @@ class InformacionMedicaTest extends DuskTestCase
 
         $this->browse(function (Browser $browser) {
             $browser->loginAs(User::find(1))                   //Hace el login
-            ->visit('/index')
-            ->clickLink('Información médica')
-            ->visit('/informacion-medica')
-            ->clickLink(' Editar')
             ->visit('/informacion-medica/1/edit')
             ->type('name', 'infoMedica pacho')
             ->press('Registro')
