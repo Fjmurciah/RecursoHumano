@@ -30,17 +30,17 @@ class ServicioAliadoTest extends DuskTestCase
         ]);
 
         $this->browse(function (Browser $browser) {
-            $browser->loginAs(User::find(1));                   //Hace el login
-            $browser->visit('/index');
-            $browser->press('Información de servicios aliados');
-            $browser->visit('/informacion-aliado');
-            $browser->press('Crear información aliados');
-            $browser->visit('/informacion-aliado/create');
-            $browser->type('name', 'Empresa');
-            $browser->type('nit', '1234');
-            $browser->attach('url', 'C:\Users\Ferjo\Downloads\hojadevida.pdf');
-            $browser->press('Registro');
-            $browser->assertPathIs('/informacion-aliado')->assertSee('Empresa');
+            $browser->loginAs(User::find(1))                   //Hace el login
+            ->visit('/index')
+            ->clickLink('Información de servicios aliados')
+            ->visit('/informacion-aliado')
+            ->clickLink('Crear información aliados')
+            ->visit('/informacion-aliado/create')
+            ->type('name', 'Empresa')
+            ->type('nit', '1234')
+            ->attach('url', 'C:\Users\Ferjo\Downloads\hojadevida.pdf')
+            ->press('Registro')
+            ->assertPathIs('/informacion-aliado')->assertSee('Empresa');
         });
     }
 
@@ -62,15 +62,15 @@ class ServicioAliadoTest extends DuskTestCase
         ]);
 
         $this->browse(function (Browser $browser) {
-            $browser->loginAs(User::find(1));                   //Hace el login
-            $browser->visit('/index');
-            $browser->press('Información de servicios aliados');
-            $browser->visit('/informacion-aliado');
-            $browser->press('Editar');
-            $browser->visit('/informacion-aliado/1/edit');
-            $browser->type('name', 'Empresa SAS');
-            $browser->press('Registro');
-            $browser->assertPathIs('/informacion-aliado')->assertSee('Empresa SAS');
+            $browser->loginAs(User::find(1))                   //Hace el login
+            ->visit('/index')
+            ->clickLink('Información de servicios aliados')
+            ->visit('/informacion-aliado')
+            ->clickLink('Editar')
+            ->visit('/informacion-aliado/1/edit')
+            ->type('name', 'Empresa SAS')
+            ->press('Registro')
+            ->assertPathIs('/informacion-aliado')->assertSee('Empresa SAS');
         });
     }
 
@@ -92,13 +92,12 @@ class ServicioAliadoTest extends DuskTestCase
         ]);
 
         $this->browse(function (Browser $browser) {
-            $browser->loginAs(User::find(1));                   //Hace el login
-            $browser->visit('/index');
-            $browser->press('Información de servicios aliados');
-            $browser->visit('/informacion-aliado');
-            $browser->visit('/informacion-aliado');
-            $browser->press('Eliminar X');
-            $browser->assertPathIs('/informacion-aliado');
+            $browser->loginAs(User::find(1))                   //Hace el login
+            ->visit('/index')
+            ->clickLink('Información de servicios aliados')
+            ->visit('/informacion-aliado')
+            ->press('Eliminar X')
+            ->assertPathIs('/informacion-aliado');
         });
     }
 }

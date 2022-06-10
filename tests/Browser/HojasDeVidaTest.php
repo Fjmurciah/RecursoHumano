@@ -30,22 +30,22 @@ class HojasDeVidaTest extends DuskTestCase
         ]);
 
         $this->browse(function (Browser $browser) {
-            $browser->loginAs(User::find(1));                   //Hace el login
-            $browser->visit('/index');
-            $browser->press('Hojas de vida');
-            $browser->visit('/hojas-de-vida');
-            $browser->press('Crear hoja de vida');
-            $browser->visit('/hojas-de-vida/create');
-            $browser->type('name', 'Pepito Perez');
+            $browser->loginAs(User::find(1))                   //Hace el login
+            ->visit('/index')
+            ->clickLink('Hojas de vida')
+            ->visit('/hojas-de-vida')
+            ->clickLink('Crear hoja de vida')
+            ->visit('/hojas-de-vida/create')
+            ->type('name', 'Pepito Perez')
 
-            $browser->select('rol');
-            $browser->attach('url', 'C:\Users\Ferjo\Downloads\hojadevida.pdf');
-            $browser->select('estado');
-            $browser->type('email', 'pepitoperez@gmail.com');
-            $browser->type('password', '1234');
-            $browser->type('password_confirmation', '1234');
-            $browser->press('Registrarse');
-            $browser->assertPathIs('/hojas-de-vida')->assertSee('Pepito Perez');
+            ->select('rol')
+            ->attach('url', 'C:\Users\Ferjo\Downloads\hojadevida.pdf')
+            ->select('estado')
+            ->type('email', 'pepitoperez@gmail.com')
+            ->type('password', '1234')
+            ->type('password_confirmation', '1234')
+            ->press('Registrarse')
+            ->assertPathIs('/hojas-de-vida')->assertSee('Pepito Perez');
         });
     }
 
@@ -70,16 +70,15 @@ class HojasDeVidaTest extends DuskTestCase
         ]);
 
         $this->browse(function (Browser $browser) {
-            $browser->loginAs(User::find(1));                   //Hace el login
-            $browser->visit('/index');
-            $browser->press('Hojas de vida');
-            $browser->visit('/hojas-de-vida');
-            $browser->press('Editar');
-            $browser->visit('/hojas-de-vida/2/edit');
-            $browser->type('name', 'Pepito Pérez Martínez');
-            $browser->press('Registro');
-
-            $browser->assertPathIs('/hojas-de-vida');
+            $browser->loginAs(User::find(1))                   //Hace el login
+            ->visit('/index')
+            ->clickLink('Hojas de vida')
+            ->visit('/hojas-de-vida')
+            ->clickLink('Editar')
+            ->visit('/hojas-de-vida/2/edit')
+            ->type('name', 'Pepito Pérez Martínez')
+            ->press('Registro')
+            ->assertPathIs('/hojas-de-vida');
         });
     }
 
@@ -104,12 +103,12 @@ class HojasDeVidaTest extends DuskTestCase
         ]);
 
         $this->browse(function (Browser $browser) {
-            $browser->loginAs(User::find(1));                   //Hace el login
-            $browser->visit('/index');
-            $browser->press('Hojas de vida');
-            $browser->visit('/hojas-de-vida');
-            $browser->press('Eliminar X');
-            $browser->assertPathIs('/hojas-de-vida');
+            $browser->loginAs(User::find(1))                  //Hace el login
+            ->visit('/index')
+            ->clickLink('Hojas de vida')
+            ->visit('/hojas-de-vida')
+            ->press('Eliminar X')
+            ->assertPathIs('/hojas-de-vida');
         });
     }
 }

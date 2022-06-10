@@ -33,9 +33,9 @@ class InformacionMedicaTest extends DuskTestCase
         $this->browse(function (Browser $browser) {
             $browser->loginAs(User::find(1));                   //Hace el login
             $browser->visit('/index')
-            ->press('Información médica');
+            ->clickLink('Información médica');
             $browser->visit('/informacion-medica')
-            ->press('Crear información medica');
+            ->clickLink('Crear información medica');
             $browser->visit('/informacion-medica/create');
             $browser->type('name', 'infoMedica');
             $browser->attach('url', 'C:\Users\Ferjo\Downloads\hojadevida.pdf');
@@ -61,15 +61,15 @@ class InformacionMedicaTest extends DuskTestCase
         ]);
 
         $this->browse(function (Browser $browser) {
-            $browser->loginAs(User::find(1));                   //Hace el login
-            $browser->visit('/index')
-            ->press('Información médica');
-            $browser->visit('/informacion-medica')
-            ->press('Editar');
-            $browser->visit('/informacion-medica/1/edit');
-            $browser->type('name', 'infoMedica pacho');
-            $browser->press('Registro');
-            $browser->assertPathIs('/informacion-medica')->assertSee('infoMedica');
+            $browser->loginAs(User::find(1))                   //Hace el login
+            ->visit('/index')
+            ->clickLink('Información médica')
+            ->visit('/informacion-medica')
+            ->clickLink('Editar')
+            ->visit('/informacion-medica/1/edit')
+            ->type('name', 'infoMedica pacho')
+            ->press('Registro')
+            ->assertPathIs('/informacion-medica')->assertSee('infoMedica');
         });
 
     }
@@ -91,12 +91,12 @@ class InformacionMedicaTest extends DuskTestCase
         ]);
 
         $this->browse(function (Browser $browser) {
-            $browser->loginAs(User::find(1));                   //Hace el login
-            $browser->visit('/index');
-            $browser->press('Información médica');
-            $browser->visit('/informacion-medica');
-            $browser->press('Eliminar X');
-            $browser->assertPathIs('/informacion-medica');
+            $browser->loginAs(User::find(1))                   //Hace el login
+            ->visit('/index')
+            ->clickLink('Información médica')
+            ->visit('/informacion-medica')
+            ->press('Eliminar X')
+            ->assertPathIs('/informacion-medica');
         });
 
     }

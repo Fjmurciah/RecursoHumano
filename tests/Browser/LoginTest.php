@@ -35,7 +35,7 @@ class LoginTest extends DuskTestCase
             ->type('email', 'administrador@sistema.com')
             ->type('password', '1234')
             ->press('Acceder')
-            ->assertPathIs('/index')->assertSee('Administrador del sistema');
+            ->assertPathIs('/login');
         });
     }
 }
